@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+
+*,
+/*Trae todo el contenido del html*/
+/*Trae la parte de atras del codigo html*/
+*::after {
+    margin: 0;
+    /*Margen externo*/
+    padding: 0;
+    /*Espaciado de relleno externo */
+    box-sizing: border-box;
+    /*Se me almacene dentro de una caja de texto*/
+
+}
+
+html {
+    font-family: 'Merriweather', sans-serif;
+    font-size: 10px;
+    color: black;
+    scroll-behavior: smooth;
+    /*Ayuda a mejorar la transicion de los contenidos del sitio web*/
+}
+
+body {
+    overflow-x: hidden; /*Oculta la parte horizontal del sitio web y los proyecta mediante secciones*/
+
+}
+
+section {
+    padding: 3.9rem; /*mejora el tamaño de la letra del todo el contenido que esta dentro de esta etiqueta*/
+    overflow: hidden;/*Nos oculte el contenido quue esta incertado dentro de esta etiqueta*/
+}
+
+img {
+    width: 100%;
+    max-width: 100%;
+
+}
+
+a {
+    text-decoration: none;/*Quita el subarrayado a los hipervinculos en la pagina web*/
+
+}
+
+p {
+    font-size: 1.6rem;
+
+}
+
+.container {
+    width: 100%;
+    max-width: 122.5rem;
+    margin: 0 auto;
+    padding: 0 2.4rem;
+
+}
+
+/*Aqui son los estilos del header*/
+
+header {
+    width: 100%;
+    position: absolute;/*Van a quedar fijos sus elementos*/
+    top: 0;
+    left: 0;/*Nada se incline demasido a la izquierda*/
+    z-index: 1; /*Sobre pone el contenido*/
+    background-image: linear-gradient(to bottom , rgba(0,0,0,.5), transparent);
+
+}
+
+.nav {
+    height: 7.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.menu-toggle {
+    color: white;
+    font-size: 2.2rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 2.5rem;/*rem significa ESPACIADO ENTRE LETRAS*/
+    cursor: pointer;
+    z-index: 1500;
+
+}
+
+.fa-times {
+    display: none;
+
+}
+
+.nav-list {
+    list-style: none;
+    position: fixed;/*Para que quede fijo*/
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100vh;/*vh hace referencia a la altura de los elementos en el dispositivo*/
+    background-color: #252525;
+    padding: 4.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;/*Rellena los espacios de las colummnas*/
+    z-index: 1250;
+    transform: translateX(-100%);
+
+}
+
+.nav::before { 
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .8);
+    z-index: 1000;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity .5s;
+}
+
+.open, .fa-times {
+    display: block;/*Muestre todos los elementos en forma de bloque(a la largo)*/
+}
+
+.open, .fa-bars {
+    display: none;
+}
+
+.open, .nav-list {
+    transform: translateX(0);
+}
+
+.open, .nav::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.logo {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;/*(bold)Intensidad de la negrilla*/
+
+}
+
+.nav-item {
+   border-bottom: 2px solid rgba(255, 255, 255, .3);
+}
+
+.nav-link {
+    display: block;
+    color: white;
+    text-transform: uppercase;/*Transforma el texto en mayuscula*/
+    font-size: 1.6rem;/*Tamaño del texto*/
+    letter-spacing: 2px; /*Espaciado adicional a  los elementos*/
+    margin-right: 0px;
+
+}
+
+.nav-link:hover { /*(hover)Ayuda a cambiar el color a los elementos cuando nos posicionamos sobre el*/
+    color: #3bcc75;
+}
+
+/*Aqui vamos a trabajar los estilos del hero*/
+.hero {
+    width: 100%;
+    height: 70vh;
+    background: url("../images/hero.jpg") center no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+}
+
+.h2-sub {
+    font-size: 3rem;
+    font-family: 'Merriweather', sans-serif;
+    color: #3bcc75;
+    font-weight: 600;
+    line-height: .4;    
+}
+
+.fil {
+    text-transform: uppercase;
+    font-size: 3rem;
+}
+
+.head {
+    color: white;
+    font-size: 3.7rem;
+    font-family: 'Merriweather' , sans-serif;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: .5rem;
+}
+
+.circle {
+    font-size: 1.5rem;
+    color:#3bcc75;
+    margin: 0 1.6rem;
+}
+
+.he-des h5 {
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 100;
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+    letter-spacing: 3px;
+    margin-right: -3px;
+
+}
+
+.btn {
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-right: -2px;
+
+}
+
+.cta-btn {
+    font-size: 1.1rem;
+    background-color: #ffc845;
+    padding: 1.5rem 3rem;
+    color:white;
+    border-radius: .4rem;
+
+}
+
+.cta-btn:hover, .cta-btn:focus {
+    color: white;
+    background-color: #3bcc75;
+
+}
+
+.global {
+    text-align: center;
+    margin-top: 3.9rem;
+}
+
+.dis-sto .global {
+    margin-top: 6.9rem;
+
+}
+
+.global .circle {
+    color: #3bcc75;
+    margin: 2.4rem 0;
+}
+
+.hea-dark {
+    color: black;
+    letter-spacing: .7rem;
+    margin-right: -.7rem;
+}
+
+.global .h2-sub {
+    letter-spacing: -1px;
+    line-height: .42;
+}
+
+.res-info {
+    text-align: center;
+}
+
+.res-des {
+    margin-bottom: 3rem;
+}
+
+.res-des p {
+    line-height: 1.6;
+    margin-bottom: 2.4rem;
+}
+
+/*Aqui modificaremos el Menu*/
+.taste {
+    background: url("../images/taste.jpg" ) center no-repeat;
+    background-size: cover;
+
+}
+
+.bt {
+    min-height: 65vh;
+    display: flex;
+    align-items: center;
+}
+
+.image-group {
+    display: grid; /*cuadricula*/
+    grid-template-columns: repeat(2, 1fr);/*columna,   fila */
+    grid-gap: 1.5rem; /*se encarga de separar del ancho de las columnas*/
+}
+
+.disco .res-des {
+    padding-top: 3rem;
+    margin-bottom: 0;
+    
+}
+
+.pb {
+    background: url("../images/mesa.jpg") center no-repeat;
+    background-size: cover;
+}
+
